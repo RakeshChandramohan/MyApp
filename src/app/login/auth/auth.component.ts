@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from 'app/shared/services/services.module';
 import { IProfileModel } from "../../shared/models/iprofile-model";
+import { AlertService } from "app/shared/services/alert.service";
 
 @Component({
   selector: 'ra-auth',
@@ -18,7 +19,8 @@ export class AuthComponent implements OnInit {
   isError: boolean;
   constructor(private _router: Router,
     private _route: ActivatedRoute,
-    private _login: LoginService) {
+    private _login: LoginService,
+    private  _alertService: AlertService) {
     this.isError = false;
   }
 
@@ -34,7 +36,7 @@ export class AuthComponent implements OnInit {
     this._router.navigateByUrl("home");
   }
   private loginValdation() {
-    if (this.UserName == null || this.UserName == "") { alert("Enter UserName"); return false; }
+    if (this.UserName == null || this.UserName == "") {  this._alertService.error("Enter UserName"); return false; }
     if (this.Password == null || this.Password == "") { alert("Enter Password"); return false; }
     return true;
   }

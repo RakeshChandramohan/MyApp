@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlertComponent } from './alert/alert.component';
-import { AlertDirective } from './alert.directive';
-import { SnackBarComponent } from "app/alert/alert/snackbar.component";
+import { AlertComponent } from './alert/alert.component'; 
+import { MaterialModule } from "@angular/material";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
-  declarations: [AlertComponent, AlertDirective,SnackBarComponent ],
-  exports:[AlertDirective,SnackBarComponent],
-  entryComponents: [ SnackBarComponent]
+  declarations: [ AlertComponent],
+  exports:[AlertComponent ],
+  entryComponents: [  ]
 })
 export class AlertModule { }

@@ -1,0 +1,16 @@
+.alert{
+    position: fixed;
+     width: 100%; 
+     opacity: 0.9; 
+   //   bottom: 0px;  
+     color:white;
+     padding: 10px;
+
+}
+.alert-success{
+    background-color: green;
+}
+.alert-danger{
+    background-color: red
+    ;
+}

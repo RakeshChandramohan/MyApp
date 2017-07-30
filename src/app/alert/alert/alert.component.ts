@@ -1,31 +1,52 @@
-import { Component, OnInit ,ComponentFactoryResolver,ViewChild} from '@angular/core';
-import { MdSnackBar } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
+import { MdCard }  from "@angular/material"
 
-import { AlertDirective } from "app/alert/alert.directive";
-import { SnackBarComponent } from "app/alert/alert/snackbar.component";
+import { Alert, AlertType } from 'app/shared/models/alert';
+import { AlertService } from 'app/shared/services/alert.service';
 
 @Component({
   selector: 'ra-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss']
 })
-export class AlertComponent  {
-  @ViewChild(AlertDirective) popup: AlertDirective;
-  message: string;
-    constructor(private _componentFactoryResolver: ComponentFactoryResolver) {  
-    this.message = "success";
-  }
-  ngAfterViewInit() {
-    this.loadSnackBar();
-  }
-  ngOnInit() { }
-  loadSnackBar(){
-     let componentFactory = this._componentFactoryResolver.resolveComponentFactory(SnackBarComponent);
-    let viewContainerRef = this.popup.viewContainerRef;
-    viewContainerRef.clear();
-    let componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.openSnackBar(this.message,this.message)
-  }
+export class AlertComponent implements OnInit {
+  alerts: Alert[] = [];
+
+    constructor(private alertService: AlertService) { }
+
+    ngOnInit() {
+        this.alertService.getAlert().subscribe((alert: Alert) => {
+            if (!alert) {
+                // clear alerts when an empty alert is received
+                this.alerts = [];
+                return;
+            }
+
+            // add alert to array
+            this.alerts.push(alert);
+        });
+    }
+
+    removeAlert(alert: Alert) {
+        this.alerts = this.alerts.filter(x => x !== alert);
+    }
+
+    cssClass(alert: Alert) {
+        if (!alert) {
+            return;
+        }
+
+        // return css class based on alert type
+        switch (alert.type) {
+            case AlertType.Success:
+                return 'alert alert-success';
+            case AlertType.Error:
+                return 'alert alert-danger';
+            case AlertType.Info:
+                return 'alert alert-info';
+            case AlertType.Warning:
+                return 'alert alert-warning';
+        }
+    }
+
 }
-
-

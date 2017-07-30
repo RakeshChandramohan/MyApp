@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from "app/app-routing.module";
 import { MenuComponent } from './menu/menu.component';
+import { AlertModule } from "app/alert/alert.module";
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { MenuComponent } from './menu/menu.component';
     MdToolbarModule,
     MdCardModule,
     MdSidenavModule,
-
+   AlertModule
   ],
   declarations: [HomeComponent, HeaderComponent, FooterComponent, MenuComponent],
   exports: [HomeComponent  ],

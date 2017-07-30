@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 
 /*third party Modules */
 import { AppRoutingModule } from './app-routing.module';
-
+import 'hammerjs';
 /* My Modules */
 
 import { LoginModule  } from './login/login.module';
@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from "app/core/core.module";
 import { ServicesModule } from "app/shared/services/services.module";
 import { AlertModule } from "app/alert/alert.module";
+import { AlertService } from "app/shared/services/alert.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AlertModule } from "app/alert/alert.module";
     AlertModule,
     ServicesModule.forRoot()
   ],
-  // providers: [],
+   providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

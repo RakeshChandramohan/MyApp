@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'ra-footer',
   templateUrl: './footer.component.html',
