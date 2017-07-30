@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="card"></div>
+  <md-card class="card">
+    <md-card-header>
+      <md-card-title class="title">Retail Assist</md-card-title>
+    </md-card-header>
+    <form>
+      <md-input-container class="input-container ">
+        <input name="UserName" type="text" mdInput placeholder="Username" [(ngModel)]="UserName">
+      </md-input-container>
+
+      <md-input-container class="input-container">
+        <input name="Password1" mdInput placeholder="Password" [(ngModel)]="Password" type="password">
+      </md-input-container>
+    </form>
+    <md-card-actions class="button-container" style="border-top:0px">
+      <!--<button md-raised-button>New User</button>-->
+      <button md-raised-button (click)="Login()">Login</button>
+    </md-card-actions>
+    <md-card-footer class="footer"><a href="#">Forgot your password?</a></md-card-footer>
+  </md-card>
+</div>
+
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Login</h1>
+    <form>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required" />
+        <label for="#{label}">Username</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required" />
+        <label for="#{label}">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button><span>Go</span></button>
+      </div>
+      <div class="footer"><a href="#">Forgot your password?</a></div>
+    </form>
+  </div>
+  <div class="card alt">
+    <div class="toggle"></div>
+    <h1 class="title">Register
+      <div class="close"></div>
+    </h1>
+    <form>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required" />
+        <label for="#{label}">Username</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required" />
+        <label for="#{label}">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="#{type}" id="#{label}" required="required" />
+        <label for="#{label}">Repeat Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <button><span>Next</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+ 
