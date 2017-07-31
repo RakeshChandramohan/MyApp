@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MdToolbarModule,MdCardModule,MdSidenavModule  } from '@angular/material';
+import { MdToolbarModule,MdCardModule,MdSidenavModule ,MdButtonModule } from '@angular/material';
 
 
 import { HomeComponent } from './home/home.component';
@@ -15,6 +15,7 @@ import { AlertModule } from "app/alert/alert.module";
     MdToolbarModule,
     MdCardModule,
     MdSidenavModule,
+    MdButtonModule,
    AlertModule
   ],
   declarations: [HomeComponent, HeaderComponent, FooterComponent, MenuComponent],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdCard }  from "@angular/material"
+import { MdCard,MdGridListModule }  from "@angular/material"
 
 import { Alert, AlertType } from 'app/shared/models/alert';
 import { AlertService } from 'app/shared/services/alert.service';

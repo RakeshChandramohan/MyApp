@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
+import { MaterialModule } from "@angular/material";
+
 /*third party Modules */
 import { AppRoutingModule } from './app-routing.module';
 import 'hammerjs';
@@ -19,6 +21,7 @@ import { CoreModule } from "app/core/core.module";
 import { ServicesModule } from "app/shared/services/services.module";
 import { AlertModule } from "app/alert/alert.module";
 import { AlertService } from "app/shared/services/alert.service";
+import { ControlModule } from "app/control/control.module";
 
 @NgModule({
   declarations: [
@@ -27,9 +30,11 @@ import { AlertService } from "app/shared/services/alert.service";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
     // FormsModule,
     // HttpModule,
     AppRoutingModule,
+    ControlModule,
     LoginModule,
     CoreModule,
     AlertModule,

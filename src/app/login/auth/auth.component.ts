@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from 'app/shared/services/services.module';
 import { IProfileModel } from "../../shared/models/iprofile-model";
 import { AlertService } from "app/shared/services/alert.service";
+import {FormControl, Validators} from '@angular/forms';
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
   selector: 'ra-auth',
@@ -10,6 +12,9 @@ import { AlertService } from "app/shared/services/alert.service";
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
+    emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(EMAIL_REGEX)]);
   UserName: string;
   Password: string;
   dataJson: any;

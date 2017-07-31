@@ -10,13 +10,15 @@ import { AuthComponent } from './auth/auth.component';
 import { CoreModule } from "app/core/core.module"; 
 import { AlertModule } from "app/alert/alert.module";
 
+import { MdInputModule ,MdButtonModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule, 
     FormsModule,
     AlertModule,
-    CoreModule
+    CoreModule,
+    MdInputModule ,MdButtonModule 
   ],
   declarations: [AuthComponent],
   exports:[AuthComponent]
