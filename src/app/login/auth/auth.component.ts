@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from 'app/shared/services/services.module';
 import { IProfileModel } from "../../shared/models/iprofile-model";
-import { AlertService } from "app/shared/services/alert.service";
-import {FormControl, Validators} from '@angular/forms';
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+import { AlertService } from "app/shared/services/alert.service";  
 
 @Component({
   selector: 'ra-auth',
@@ -12,9 +10,7 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-    emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern(EMAIL_REGEX)]);
+  
   UserName: string;
   Password: string;
   dataJson: any;
@@ -42,7 +38,7 @@ export class AuthComponent implements OnInit {
   }
   private loginValdation() {
     if (this.UserName == null || this.UserName == "") {  this._alertService.error("Enter UserName"); return false; }
-    if (this.Password == null || this.Password == "") { alert("Enter Password"); return false; }
+    if (this.Password == null || this.Password == "") {  this._alertService.error("Enter Password"); return false; }
     return true;
   }
   private loginServerValdation() {

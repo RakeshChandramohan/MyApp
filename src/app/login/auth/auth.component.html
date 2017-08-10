@@ -1,4 +1,39 @@
-  <form>
+<!--<md-grid-list cols="1" rowHeight="100px" style="align-items: center; width:400px; border: solid 1px red" >
+  <md-grid-tile>
+    asdasdsa
+  </md-grid-tile>
+</md-grid-list>
+<md-card>
+  <md-grid-list cols="1" rowHeight="100px" rowWidth="400px">
+    <md-grid-tile>
+      <md-card-title>
+        <md-card-title>
+          <span class="md-headline">Action buttons</span>
+        </md-card-title>
+      </md-card-title>
+    </md-grid-tile>
+    <md-grid-tile>
+      <md-input-container class="input-container ">
+        <input name="UserName" type="text" mdInput placeholder="Username" [(ngModel)]="UserName">
+      </md-input-container>
+    </md-grid-tile>
+    <md-grid-tile>
+      <md-input-container class="input-container">
+        <input name="Password" mdInput placeholder="Password" [(ngModel)]="Password" type="password">
+      </md-input-container>
+    </md-grid-tile>
+    <md-grid-tile>
+      <md-card-actions class="button-container" style="border-top:0px">
+        <button md-raised-button (click)="Login()">Login</button>
+      </md-card-actions>
+    </md-grid-tile>
+  </md-grid-list>
+
+</md-card>-->
+
+
+<!--<md-card-content>
+    <form>
       <md-input-container class="input-container ">
         <input name="UserName" type="text" mdInput placeholder="Username" [(ngModel)]="UserName">
       </md-input-container>
@@ -7,8 +42,77 @@
         <input name="Password" mdInput placeholder="Password" [(ngModel)]="Password" type="password">
       </md-input-container>
     </form>
-    <md-card-actions class="button-container" style="border-top:0px">
-      <!--<button md-raised-button>New User</button>-->
-      <button md-raised-button (click)="Login()">Login</button>
-    </md-card-actions>
-  <ra-alert></ra-alert>
+  </md-card-content>
+  <md-card-actions class="button-container" style="border-top:0px">
+    <button md-raised-button (click)="Login()">Login</button>
+  </md-card-actions>-->
+
+<!--    
+<md-grid-list md-cols="4" md-row-height="200px">
+  <md-grid-tile> test </md-grid-tile>
+</md-grid-list>-->
+<!--    
+
+<form class="example-form">
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="UserName">
+    <md-error *ngIf="emailFormControl.hasError('pattern')">
+      Please enter a valid email address
+    </md-error>
+    <md-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </md-error>
+  </md-input-container>
+</form>-->
+
+    <div flex-xs flex-gt-xs="40" layout="column" layout-align="center center">
+        <md-card class="card-40-center">
+            <md-card-title>
+                <md-card-title>
+                    <span class="md-headline">Sign Up</span>
+                </md-card-title>
+            </md-card-title>
+            <div class="md-padding" layout-align="center">
+                <div layout="row">
+            <md-input-container flex="100">
+                <label>First name</label>
+                <input>
+            </md-input-container>
+                <md-input-container flex="100">
+                    <label>Last name</label>
+                    <input>
+                </md-input-container>
+                    </div>
+                <div layout="row">
+                <md-input-container flex="100">
+                    <label>Username</label>
+                    <input>
+                </md-input-container>
+                <md-input-container flex="100">
+                    <label>Email</label>
+                    <input type="email">
+                </md-input-container>
+                    </div>
+                <div layout="row">
+                <md-input-container flex="100">
+                    <label>Password</label>
+                    <input type="password">
+                </md-input-container>
+                <md-input-container flex="100">
+                    <label>Repeat Password</label>
+                    <input type="password">
+                </md-input-container>
+                    </div>
+                
+
+            <md-card-actions layout="row" layout-align="center">
+                  <button md-raised-button (click)="Login()">Login</button>
+
+            </md-card-actions>
+            <md-card-content>
+
+            </md-card-content>
+
+            </div></md-card>
+    </div>
+<ra-alert></ra-alert>
